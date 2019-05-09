@@ -39,8 +39,8 @@ class Student extends Person {
     PRAssignment(subject) {
         console.log(`${this.name} has submitted a PR for ${subject}`)
     }
-    sprintChallenge () {
-        console.log(`${student.name} has begun sprint challenge on ${subject}`)
+    sprintChallenge (subject) {
+        console.log(`${this.name} has begun sprint challenge on ${subject}`)
     }
 }
 
@@ -58,3 +58,40 @@ class ProjectManagers extends Instructor{
     }
 }
 
+const jane = new Student({
+    name: 'Jane',
+    age: 23,
+    location: 'Bali',
+    previousBackground: 'chef',
+    className: 'webeu2',
+    favSubjects: ['javascript, less, react']
+})
+
+const fred = new Instructor({
+    name: 'Fred',
+    age: 37,
+    location: 'Bedrock',
+    specialty: 'ruby',
+    favLanguage: 'javascript',
+    catchPharse: 'Don\'t forget the homies'
+  });
+
+  const aisha = new ProjectManagers({
+    name: 'Aisha',
+    age: 30,
+    location: 'South Africa',
+    specialty: 'react',
+    favLanguage: 'C#',
+    catchPharse: 'Carpe diem',
+    gradClassName: 'CS1',
+    favInstructor: 'Gabe',
+  })
+
+  console.log(jane.speak());
+  console.log(fred.demo('javascript'))
+  console.log(fred.grade(jane, 'javascript'))
+  console.log(jane.listsSubjects())
+  console.log(jane.PRAssignment('react'))
+  console.log(jane.sprintChallenge('redux'))
+  console.log(aisha.standUp('webeu2'))
+  console.log(aisha.debugsCode(jane, 'CSS'))
